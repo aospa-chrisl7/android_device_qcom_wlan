@@ -30,13 +30,10 @@ QC_WIFI_HIDL_FEATURE_DUAL_AP := true
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.aware.interface=wifi-aware0
 
-# Disable QMI support
 QMI_NOT_SUPPORT := true
 
-ifeq ($(strip $(QMI_NOT_SUPPORT)),true)
 #Disable DMS MAC address feature in cnss-daemon
 TARGET_USES_NO_DMS_QMI_CLIENT := true
-endif
 
 WLAN_PLATFORM_KBUILD_OPTIONS := CONFIG_CNSS_OUT_OF_TREE=y CONFIG_CNSS2=m \
 				CONFIG_CNSS2_QMI=y CONFIG_CNSS_QMI_SVC=m \
